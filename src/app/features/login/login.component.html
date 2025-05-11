@@ -1,0 +1,47 @@
+<p-toast position="top-center" />
+<div class="fullscreen-login">
+  <div class="card login-card">
+    <h2 class="text-center">SubMind</h2>
+    <p class="text-center">Login</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <p-inputgroup class="input_group">
+        <p-inputgroup-addon>
+          <i class="pi pi-user"></i>
+        </p-inputgroup-addon>
+        <input pInputText placeholder="Email/Username" formControlName="identifier" />
+      </p-inputgroup>
+
+      <p-inputgroup class="input_group">
+        <p-inputgroup-addon>
+          <i class="pi pi-lock"></i>
+        </p-inputgroup-addon>
+        <input
+          pInputText
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+        />
+      </p-inputgroup>
+
+      <div class="button-group">
+        <button
+          pButton
+          type="submit"
+          label="Login"
+          class="p-button-primary p-button-rounded"
+          [disabled]="loginForm.invalid"
+        ></button>
+      </div>
+    </form>
+
+    <div class="register-group">
+      <button
+        pButton
+        type="button"
+        label="Register"
+        class="p-button-secondary p-button-rounded"
+      ></button>
+    </div>
+  </div>
+</div>
